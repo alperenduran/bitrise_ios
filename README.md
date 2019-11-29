@@ -6,4 +6,4 @@ For more information: api-docs.bitrise.io
 
 ## Known Issues
 
-- When current token changed by user, user should kill and relaunch the app to make the changes affect. 
+- [SOLVED] When current token changed by user, user should kill and relaunch the app to make the changes affect. 
