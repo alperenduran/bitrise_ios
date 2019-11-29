@@ -8,7 +8,7 @@
 
 import Foundation
 
-var token = UserDefaults.standard.object(forKey: "token") ?? ""
+
 
 extension URLRequest {
     static func createGetRequest(
@@ -17,6 +17,7 @@ extension URLRequest {
     ) -> URLRequest {
         let url = URL(string: endpoint)
         var request = URLRequest.init(url: url!)
+        let token = UserDefaults.standard.object(forKey: "token") ?? ""
         request.addValue(token as! String, forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "accept")
         headers.forEach { (key, value) in
@@ -32,6 +33,7 @@ extension URLRequest {
         let url = URL(string: endpoint)
         var request = URLRequest.init(url: url!)
         request.httpMethod = "POST"
+        let token = UserDefaults.standard.object(forKey: "token") ?? ""
         request.addValue(token as! String, forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
