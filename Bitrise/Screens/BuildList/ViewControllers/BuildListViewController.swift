@@ -7,13 +7,21 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 struct BuildListViewController: View {
     @ObservedObject var viewModel = BuildListViewModel()
+    @State private var isShowing = false
     let application: Application
     var body: some View {
         VStack {
             BuildListView(application: self.application, builds: viewModel.builds)
+            .background(PullToRefresh(action: {
+                self.viewModel.fetchBuilds(slug: self.application.id)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.isShowing = false
+                }
+            }, isShowing: $isShowing))
             NavigationLink(
             destination: SelectBranchViewController(application: self.application)) {
                 CreateBuildCell()

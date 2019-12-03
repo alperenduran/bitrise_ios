@@ -13,8 +13,16 @@ struct BuildListView: View {
     let builds: [Build]
     var body: some View {
         List(builds, id: \.id) { build in
-            BuildCard(application: self.application, build: build)
-                .padding(.vertical)
+            NavigationLink(destination: BuildSummaryViewController(
+                branch: build.branch,
+                workflow: build.workflow,
+                application: self.application,
+                buildMessage: "Restart Build #\(build.buildNumber)"
+                )
+            ) {
+                BuildCard(application: self.application, build: build)
+                    .padding(.vertical)
+            }
         }
     }
 }
