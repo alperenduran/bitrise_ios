@@ -19,5 +19,5 @@ For more information: api-docs.bitrise.io
 
 ## Screenshots
 
-![lightapps](https://user-images.githubusercontent.com/23004475/70062628-727b2580-15f7-11ea-9558-a473d9dbaa9a.png)
-![darkapps](https://user-images.githubusercontent.com/23004475/70062650-7dce5100-15f7-11ea-8151-040f3f4d442c.png)
+![lightapps](https://user-images.githubusercontent.com/23004475/70062628-727b2580-15f7-11ea-9558-a473d9dbaa9a.png=207x448)
+![darkapps](https://user-images.githubusercontent.com/23004475/70062650-7dce5100-15f7-11ea-8151-040f3f4d442c.png=207x448)
