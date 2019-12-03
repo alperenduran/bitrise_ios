@@ -18,5 +18,8 @@ For more information: api-docs.bitrise.io
 - Unnecessary disclosure icon in the builds list.
 
 ## Screenshots
+<div>
 <img src="https://user-images.githubusercontent.com/23004475/70062628-727b2580-15f7-11ea-9558-a473d9dbaa9a.png" alt="lightapps" width="207px" height="448px">
 <img src="https://user-images.githubusercontent.com/23004475/70062650-7dce5100-15f7-11ea-8151-040f3f4d442c.png" alt="darkapps" width="207px" height="448px">
+</div>
+
