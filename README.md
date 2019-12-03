@@ -6,6 +6,7 @@ For more information: api-docs.bitrise.io
 
 ## Features
 
+- Dark Mode ❤️
 - List your applications.
 - List builds of the applications.
 - Start new builds.
