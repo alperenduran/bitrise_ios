@@ -14,4 +14,5 @@ For more information: api-docs.bitrise.io
 
 ## Known Issues
 
-- [SOLVED] When current token changed by user, user should kill and relaunch the app to make the changes affect. 
+- [SOLVED] When current token changed by user, user should kill and relaunch the app to make the changes affect.
+- Unnecessary disclosure icon in the builds list.
