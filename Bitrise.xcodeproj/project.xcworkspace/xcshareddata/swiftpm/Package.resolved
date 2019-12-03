@@ -18,15 +18,6 @@
           "revision": "9d9fa63e5987bb9f33144a0177d8bd90c66bb0c0",
           "version": "0.0.5"
         }
-      },
-      {
-        "package": "SwiftUIRefresh",
-        "repositoryURL": "https://github.com/timbersoftware/SwiftUIRefresh.git",
-        "state": {
-          "branch": null,
-          "revision": "c029f3b2f91254b129cbe3cf3f86a40dc7a1da0c",
-          "version": "0.0.1"
-        }
       }
     ]
   },

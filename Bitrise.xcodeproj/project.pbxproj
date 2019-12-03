@@ -55,7 +55,6 @@
 		ADBEA9CC2380344800969C2D /* BuildCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEA9CB2380344800969C2D /* BuildCard.swift */; };
 		ADBEA9CE23805C6D00969C2D /* BuildListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEA9CD23805C6D00969C2D /* BuildListView.swift */; };
 		E87558FA2396731D009843EB /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = E87558F92396731D009843EB /* Introspect */; };
-		E87558FD239683EB009843EB /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = E87558FC239683EB009843EB /* SwiftUIRefresh */; };
 		E879750823912F7900E2F1D8 /* BuildAbortBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E879750723912F7900E2F1D8 /* BuildAbortBody.swift */; };
 		E8FA8A3F238EA93700305E23 /* BuildStartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA8A3E238EA93700305E23 /* BuildStartTimeLabel.swift */; };
 /* End PBXBuildFile section */
@@ -140,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E87558FD239683EB009843EB /* SwiftUIRefresh in Frameworks */,
 				ADBEA9A8238018C400969C2D /* KingfisherSwiftUI in Frameworks */,
 				E87558FA2396731D009843EB /* Introspect in Frameworks */,
 			);
@@ -459,7 +457,6 @@
 			packageProductDependencies = (
 				ADBEA9A7238018C400969C2D /* KingfisherSwiftUI */,
 				E87558F92396731D009843EB /* Introspect */,
-				E87558FC239683EB009843EB /* SwiftUIRefresh */,
 			);
 			productName = Bitrise;
 			productReference = AD7BD52F236C786000CFE698 /* Bitrise.app */;
@@ -536,7 +533,6 @@
 			packageReferences = (
 				ADBEA9A6238018C400969C2D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E87558F82396731D009843EB /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
-				E87558FB239683EB009843EB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = AD7BD530236C786000CFE698 /* Products */;
 			projectDirPath = "";
@@ -974,14 +970,6 @@
 				minimumVersion = 0.0.5;
 			};
 		};
-		E87558FB239683EB009843EB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -994,11 +982,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E87558F82396731D009843EB /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
-		};
-		E87558FC239683EB009843EB /* SwiftUIRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E87558FB239683EB009843EB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
-			productName = SwiftUIRefresh;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

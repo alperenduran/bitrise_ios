@@ -14,8 +14,13 @@ struct SelectWorkflowViewController: View {
     let application: Application
     var body: some View {
         List(viewModel.workflowList, id: \.self) { workflow in
-            NavigationLink(destination: BuildSummaryViewController(branch: self.branch, workflow: workflow, application: self.application)) {
-             Text(workflow)
+            NavigationLink(destination: BuildSummaryViewController(
+                branch: self.branch,
+                workflow: workflow,
+                application: self.application
+                )
+            ) {
+                Text(workflow)
             }
         }
         .navigationBarItems(trailing:
@@ -23,8 +28,8 @@ struct SelectWorkflowViewController: View {
                 self.viewModel.getWorkflows(slug: self.application.id)
             }
         )
-        .onAppear {
-            self.viewModel.getWorkflows(slug: self.application.id)
+            .onAppear {
+                self.viewModel.getWorkflows(slug: self.application.id)
         }
         .navigationBarTitle("Select Workflow")
     }
