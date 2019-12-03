@@ -18,6 +18,11 @@ struct SelectWorkflowViewController: View {
              Text(workflow)
             }
         }
+        .navigationBarItems(trailing:
+            Button("Refresh") {
+                self.viewModel.getWorkflows(slug: self.application.id)
+            }
+        )
         .onAppear {
             self.viewModel.getWorkflows(slug: self.application.id)
         }

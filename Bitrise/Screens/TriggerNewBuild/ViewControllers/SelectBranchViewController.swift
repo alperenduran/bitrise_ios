@@ -20,7 +20,12 @@ struct SelectBranchViewController: View {
         .onAppear {
             self.viewModel.getBranches(slug: self.application.id)
         }
-        .navigationBarTitle("Select Branch")
+        .navigationBarItems(trailing:
+            Button("Refresh") {
+                self.viewModel.getBranches(slug: self.application.id)
+            }
+        )
+            .navigationBarTitle("Select Branch")
     }
 }
 struct SelectBranchViewController_Previews: PreviewProvider {
