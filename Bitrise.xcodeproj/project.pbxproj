@@ -54,6 +54,7 @@
 		ADBEA9CA2380343B00969C2D /* WorkflowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEA9C92380343B00969C2D /* WorkflowLabel.swift */; };
 		ADBEA9CC2380344800969C2D /* BuildCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEA9CB2380344800969C2D /* BuildCard.swift */; };
 		ADBEA9CE23805C6D00969C2D /* BuildListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEA9CD23805C6D00969C2D /* BuildListView.swift */; };
+		E87558FA2396731D009843EB /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = E87558F92396731D009843EB /* Introspect */; };
 		E879750823912F7900E2F1D8 /* BuildAbortBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E879750723912F7900E2F1D8 /* BuildAbortBody.swift */; };
 		E8FA8A3F238EA93700305E23 /* BuildStartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA8A3E238EA93700305E23 /* BuildStartTimeLabel.swift */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBEA9A8238018C400969C2D /* KingfisherSwiftUI in Frameworks */,
+				E87558FA2396731D009843EB /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +456,7 @@
 			name = Bitrise;
 			packageProductDependencies = (
 				ADBEA9A7238018C400969C2D /* KingfisherSwiftUI */,
+				E87558F92396731D009843EB /* Introspect */,
 			);
 			productName = Bitrise;
 			productReference = AD7BD52F236C786000CFE698 /* Bitrise.app */;
@@ -529,6 +532,7 @@
 			mainGroup = AD7BD526236C786000CFE698;
 			packageReferences = (
 				ADBEA9A6238018C400969C2D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E87558F82396731D009843EB /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = AD7BD530236C786000CFE698 /* Products */;
 			projectDirPath = "";
@@ -958,6 +962,14 @@
 				minimumVersion = 5.9.0;
 			};
 		};
+		E87558F82396731D009843EB /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -965,6 +977,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ADBEA9A6238018C400969C2D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
+		};
+		E87558F92396731D009843EB /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E87558F82396731D009843EB /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

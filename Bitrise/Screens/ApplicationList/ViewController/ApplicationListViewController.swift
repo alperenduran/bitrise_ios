@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct ApplicationListViewController: View {
     @ObservedObject var viewModel = ApplicationListViewModel()
@@ -25,6 +26,13 @@ struct ApplicationListViewController: View {
                         .padding()
                 }
             }
+        }
+        .introspectNavigationController { view in
+            let purple = UIColor(named: "appPurpleColor")
+            view.navigationBar.tintColor = purple
+            let textAttributes = [NSAttributedString.Key.foregroundColor: purple]
+            view.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+            view.navigationBar.largeTitleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
         }
         .onAppear {
             self.viewModel.fetchApplications()

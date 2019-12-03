@@ -9,6 +9,15 @@
           "revision": "3f0200463a2c747f985fa32845e7b70b0172474c",
           "version": "5.9.0"
         }
+      },
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/timbersoftware/SwiftUI-Introspect",
+        "state": {
+          "branch": null,
+          "revision": "9d9fa63e5987bb9f33144a0177d8bd90c66bb0c0",
+          "version": "0.0.5"
+        }
       }
     ]
   },
