@@ -13,17 +13,11 @@ struct BuildListViewController: View {
     @State var createButtonTapped = false
     let application: Application
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
             BuildListView(application: self.application, builds: viewModel.builds)
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button(action: { self.createButtonTapped = true }) {
-                        CreateBuildCell()
-                            .padding()
-                    }
-                }
+            Button(action: { self.createButtonTapped = true }) {
+                CreateBuildCell()
+                    .padding()
             }
             .sheet(isPresented: $createButtonTapped) {
                 SelectBranchViewController(application: self.application)
