@@ -15,11 +15,11 @@ struct BuildListViewController: View {
     var body: some View {
         ZStack {
             BuildListView(application: self.application, builds: viewModel.builds)
-            Button(action: { self.createButtonTapped = true }) {
-                VStack {
+            VStack {
+                Spacer()
+                HStack {
                     Spacer()
-                    HStack {
-                        Spacer()
+                    Button(action: { self.createButtonTapped = true }) {
                         CreateBuildCell()
                             .padding()
                     }
