@@ -10,18 +10,15 @@ import SwiftUI
 
 struct CreateBuildCell: View {
     var body: some View {
-        HStack {
+        ZStack {
+            Rectangle()
+                .frame(width: 75, height: 75, alignment: .center)
+                .foregroundColor(Color("appPurpleColor"))
+                .cornerRadius(37.5)
             Image(systemName: "plus")
                 .imageScale(.large)
-                .foregroundColor(Color("appPurpleColor"))
-            Text("Start New Build")
-                .foregroundColor(Color("appPurpleColor"))
+                .foregroundColor(.white)
         }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 15)
-                .stroke(Color("appPurpleColor"), lineWidth: 2)
-        )
     }
 }
 
