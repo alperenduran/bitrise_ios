@@ -10,14 +10,17 @@ import SwiftUI
 
 struct BuildListViewController: View {
     @ObservedObject var viewModel = BuildListViewModel()
+    @State var createButtonTapped = false
     let application: Application
     var body: some View {
         VStack {
             BuildListView(application: self.application, builds: viewModel.builds)
-            NavigationLink(
-            destination: SelectBranchViewController(application: self.application)) {
+            Button(action: { self.createButtonTapped = true }) {
                 CreateBuildCell()
-                    .padding()
+                .padding()
+            }
+                .sheet(isPresented: $createButtonTapped) {
+                    SelectBranchViewController(application: self.application)
             }
         }
         .navigationBarItems(trailing:
