@@ -16,7 +16,7 @@ struct BuildCard: View {
     var body: some View {
         HStack {
             BuildStatusView(label: build.statusLabel, color: build.statusColor)
-                .frame(height: build.status == .inProgress ? 200 : 145)
+                .frame(height: 145)
             VStack(alignment: .leading) {
                 BuildNameLabel(application: application)
                     .padding(.top)
@@ -36,23 +36,6 @@ struct BuildCard: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
-                if (build.status == .inProgress) {
-                    Button(action: {
-                        self.abortBuild(
-                            appSlug: self.application.id,
-                            buildSlug: self.build.id
-                        )
-                    }) {
-                        Text("Abort")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .fontWeight(.regular)
-                            .padding(.horizontal, 100)
-                            .padding(.vertical, 13)
-                            .background(Color("failedRed"))
-                            .cornerRadius(10)
-                    }
-                }
             }
         }
         .overlay(
@@ -69,16 +52,4 @@ struct BuildCard_Previews: PreviewProvider {
     }
 }
 
-extension BuildCard {
-    func abortBuild(appSlug: String, buildSlug: String) {
-        let endpoint = "https://api.bitrise.io/v0.1/apps/\(appSlug)/builds/\(buildSlug)/abort"
-        var request = URLRequest.createPostRequest(endpoint: endpoint, headers: [:])
-        let build = BuildAbortBody(abort: true)
-        request.httpBody = try! JSONEncoder().encode(build)
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-            }
-        }.resume()
-    }
-}
+
