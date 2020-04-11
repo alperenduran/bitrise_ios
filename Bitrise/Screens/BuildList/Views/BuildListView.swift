@@ -13,34 +13,27 @@ struct BuildListView: View {
     let builds: [Build]
     var body: some View {
         List(builds, id: \.id) { build in
-            NavigationLink(destination: BuildSummaryViewController(
-                branch: build.branch,
-                workflow: build.workflow,
-                application: self.application,
-                buildMessage: "Restart Build #\(build.buildNumber)"
-                )
-            ) {
-                if build.status == .inProgress {
-                    BuildCard(application: self.application, build: build)
-                        .padding(.vertical)
-                        .contextMenu {
-                            Button(action: {
-                                self.abortBuild(
-                                    appSlug: self.application.id,
-                                    buildSlug: build.id
-                                )
-                            }) {
-                                Text("Abort")
-                            }
-                    }
-                } else {
-                    BuildCard(application: self.application, build: build)
-                        .padding(.vertical)
+            if build.status == .inProgress {
+                BuildCard(application: self.application, build: build)
+                    .padding(.vertical)
+                    .contextMenu {
+                        Button(action: {
+                            self.abortBuild(
+                                appSlug: self.application.id,
+                                buildSlug: build.id
+                            )
+                        }) {
+                            Text("Abort")
+                        }
                 }
+            } else {
+                BuildCard(application: self.application, build: build)
+                    .padding(.vertical)
             }
         }
     }
 }
+
 
 struct BuildListView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct BuildCard: View {
     let application: Application
     let build: Build
     @State var show = false
-    
+    @State var isPresented = false
     var body: some View {
         HStack {
             BuildStatusView(label: build.statusLabel, color: build.statusColor)
@@ -36,6 +37,25 @@ struct BuildCard: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
+            }
+        }.onTapGesture {
+            self.isPresented.toggle()
+        }
+        .sheet(isPresented: self.$isPresented) {
+            NavigationView {
+                BuildSummaryViewController(
+                    branch: self.build.branch,
+                    workflow: self.build.workflow,
+                    application: self.application,
+                    buildMessage: "Restart Build #\(self.build.buildNumber)"
+                ).navigationBarTitle("Build Summary")
+                    .introspectNavigationController { view in
+                        let purple = UIColor(named: "appPurpleColor")
+                        view.navigationBar.tintColor = purple
+                        let textAttributes = [NSAttributedString.Key.foregroundColor: purple]
+                        view.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+                        view.navigationBar.largeTitleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+                }
             }
         }
         .overlay(
